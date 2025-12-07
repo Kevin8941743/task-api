@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: taskdb-service
+spec:
+  type: ClusterIP
+  selector:
+    app: taskdb
+  ports:
+    - port: 5432
+      targetPort: 5432
