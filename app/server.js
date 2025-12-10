@@ -15,10 +15,10 @@ const pool = new Pool({
 
 app.get("/tasks", async(req, res) => {
     try {
-    const result = await pool.query("SELECT * FROM tasks");
-    const newFormat = result.rows.map(task => task.text).join("\n");
-    res.set('Content-Type', 'text/plain');
-    res.send(newFormat);
+        const result = await pool.query("SELECT * FROM tasks");
+        const newFormat = result.rows.map(task => task.text).join("\n");
+        res.set('Content-Type', 'text/plain');
+        res.send(newFormat);
 
     } catch (error) {
         console.error("Error viewing the tasks: ", error);
